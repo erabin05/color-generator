@@ -2,7 +2,10 @@
     import PaletteSquare from "../PalletteSquare/PaletteSquare.svelte";
 
     export let palette: { [key: string]: { hex: string, okhsl: { s: number, h: number, l: number} }}
+    export let selectedShades: { [key: string]: { hex: string, okhsl: { s: number, h: number, l: number} }}
     export let base: number
+
+    $: {console.log(Object.keys(selectedShades))}
 
     const paletteKeys = Object.keys(palette)
 </script>
@@ -16,6 +19,7 @@
                 scale={Number(paletteKey)}
                 hex={currentPalette.hex}
                 isBase={base === Number(paletteKey)}
+                isShade={Object.keys(selectedShades).includes(`${paletteKey}`)}
             />
         </li>
     {/each}

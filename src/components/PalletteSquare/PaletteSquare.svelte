@@ -2,11 +2,13 @@
     export let hex: string
     export let scale: number
     export let isBase: boolean
+    export let isShade: boolean
 </script>
 
 <div
     class="palette-square"
     class:base={isBase}
+    class:shade={isShade}
     style:background-color={hex}
     style:color={scale < 50 ? "#000" : "#FFF"}
 >
