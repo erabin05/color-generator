@@ -1,0 +1,57 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    label {
+        color: rgba($color: #FFFFFF, $alpha: 0.8);
+        padding: 0 0.2rem;
+    }
+
+    .input-button-container {
+        display: flex;
+        flex-direction: row;
+        gap: 0.8rem;
+
+        .input-container {
+            display: flex;
+            flex-direction: row;
+            gap: 0.4rem;
+            background-color: rgba($color: #FFFFFF, $alpha: 0.15);
+            padding: 0.8rem;
+            font-size: 1.2rem;
+            color: #FFF;
+            border-radius: 0.8rem;
+            border: solid 1px rgba($color: #FFFFFF, $alpha: 0.3);
+    
+            input {
+                background: none;
+                border: 0;
+                font-size: 1.2rem;
+                color: #FFFFFF;
+    
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &:focus-within {
+                background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+            }
+        }
+
+        button {
+            border-radius: 0.8rem;
+            border: solid 1px #FFFFFF;
+            background: #FFFFFF;
+            font-size: 1rem;
+            min-width: 6rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba($color: #FFFFFF, $alpha: 0.9);
+            }
+        }
+    }
+}
