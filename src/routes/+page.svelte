@@ -10,6 +10,7 @@
 
     const onSubmitHex = () => {
         palette = generatePalette(`#${hex}`)
+        console.log(palette)
     }
 
 </script>

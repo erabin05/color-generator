@@ -22,11 +22,10 @@
         getPalette(20)
     }
 
-    const numberOfShadesPerHalf = 4
-    $: paletteBottomScaleLimit = palette.base < 50 ? 0 : palette.base - 50
-    $: lightInterval = Math.ceil((palette.base - paletteBottomScaleLimit) / (numberOfShadesPerHalf + 1))
-    $: paletteTopScaleLimit = palette.base > 50 ? 100 : palette.base + 50
-    $: darkInterval = Math.ceil((paletteTopScaleLimit - palette.base) / (numberOfShadesPerHalf + 1))
+    const paletteBottomScaleLimit = 5
+    const lightInterval = 10
+    const paletteTopScaleLimit = 95
+    const darkInterval = 10
 
     $: {
         console.log(paletteTopScaleLimit)

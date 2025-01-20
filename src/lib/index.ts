@@ -21,14 +21,16 @@ const computeScaleValueFromBase = (scale, baseScale) => {
         const interval = baseScale
         return (scale / interval * 50) / 100
     } else {
+        console.log('scale', scale)
         let interval = 100 - baseScale
-        interval = interval > 50 ? 50 : interval
         return ((((scale - baseScale) / interval) * 50) + 50) / 100
     }
 }
 
 const computeScaleSaturation = (scale, baseScaleNumber, minSaturation, maxSaturation) => {
     const scaleValue = computeScaleValueFromBase(scale, baseScaleNumber)
+
+    console.log(scaleValue)
 
     const chromaDifference = maxSaturation - minSaturation;
     return (
@@ -50,7 +52,7 @@ const generatePalette = (
 ) => {
     const rowHsl = hexToOKHSL(baseHex)
     const baseHsl =  { h: rowHsl.h, s: rowHsl.s, l: rowHsl.l }
-    
+
     // base for a scale from 0 to 100
     const baseScaleNumber = 100 - Math.round(baseHsl.l * 100)
 
@@ -79,8 +81,8 @@ const generatePalette = (
     }
 
     for(
-        let currentScale = baseScaleNumber - 50 < 0 ? 1 : baseScaleNumber - 50;
-        currentScale < 100 && currentScale < baseScaleNumber + 50;
+        let currentScale = 1;
+        currentScale < 100;
         currentScale++
     ) {
         if(currentScale != palette.base) {
@@ -95,7 +97,7 @@ export {
     generatePalette,
     hexToOKHSL,
     hexToHSL
-} 
+}
 
 
 
