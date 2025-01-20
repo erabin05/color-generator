@@ -3,8 +3,7 @@
     flex-direction: column;
     aspect-ratio: 1 / 1;
     padding: 0.8rem;
-    justify-content: flex-end;
-    gap: 0.2rem;
+    justify-content: space-between;
     max-width: 150px;
 
     p {
@@ -18,6 +17,43 @@
     .scale-hex {
         opacity: 0.8;
         font-size: 0.8rem;
+    }
+
+    > button {
+        background: none;
+        border: solid 0.1rem rgba($color: #FFFFFF, $alpha: 0.5);
+        color: rgba($color: #FFFFFF, $alpha: 0.5);
+        font-size: 0.8rem;
+        border-radius: 999px;
+        align-self: flex-end;
+
+        &:hover {
+            background: rgba($color: #FFFFFF, $alpha: 0.3);
+            cursor: pointer;
+        }
+
+        &:active {
+            background: rgba($color: #FFFFFF, $alpha: 0.2);
+        }
+
+        &.dark {
+            border: solid 0.1rem rgba($color: #000, $alpha: 0.5);
+            color: rgba($color: #000, $alpha: 0.5);
+
+            &:hover {
+                background: rgba($color: #000, $alpha: 0.3);
+            }
+
+            &:active {
+                background: rgba($color: #000, $alpha: 0.2);
+            }
+        }
+     }
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
     }
 
     &.shade {

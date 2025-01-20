@@ -3,6 +3,10 @@
     export let scale: number
     export let isBase: boolean
     export let isShade: boolean
+
+    const onCopyClick = () => {
+        navigator.clipboard.writeText(hex)
+    }
 </script>
 
 <div
@@ -12,8 +16,14 @@
     style:background-color={hex}
     style:color={scale < 50 ? "#000" : "#FFF"}
 >
-    <p class='scale-name'>{scale}</p>
-    <p class='scale-hex'>{hex}</p>
+    <button
+        on:click={onCopyClick}
+        class:dark={scale < 50}
+    >copy</button>
+    <div class='info-container'>
+        <p class='scale-name'>{scale}</p>
+        <p class='scale-hex'>{hex}</p>
+    </div>
 </div>
 
 <style lang="scss">
